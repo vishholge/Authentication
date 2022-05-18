@@ -1,0 +1,29 @@
+.sign-up-container{
+    width: 30%;
+    border: 2px solid black;
+    padding: 20px;
+    margin-top: 5rem;
+    background-color: azure;
+    display: none;
+}
+input{
+    background-color:rgb(193, 187, 178);
+    
+}
+.log-in-container{
+    width: 30%;
+    border: 2px solid black;
+    padding: 20px;
+    margin-top: 5rem;
+    background-color: azure;
+    display: none;
+}
+.home-container{
+    display: block;
+}
+button{
+    margin-right: 1rem;
+}
+.alert{
+    display: none;
+}
