@@ -27,3 +27,13 @@ button{
 .alert{
     display: none;
 }
+#loginValid{
+    display: none;
+    color: green;
+
+}
+#loginInvalid{
+    display: none;
+    color: red;
+
+}

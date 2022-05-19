@@ -60,6 +60,7 @@
     </div>
 
   </div>
+    <!-- sign up container -->
 
   <div class="container sign-up-container " id = "sign-up-page">
     <div class="heading">
@@ -121,7 +122,7 @@
       </div>
       <div class="col-md-6">
         <label for="validationCustom05" class="form-label"> <i class="fa-solid fa-key"></i> Confirm Password</label>
-        <input type="password" class="form-control" id="validationCustom05" required placeholder="Confirm password">
+        <input  type="password" class="form-control" id="confirm-password" required placeholder="Confirm password"  onkeyup="confirmPass()"><span id = "confirm-pass" style="width: 15px; height: 15px; background-color:green; border-radius: 50%;"></span>
         <div class="valid-feedback">
           Looks good!
         </div>
@@ -170,11 +171,18 @@
           Please provide a valid city.
         </div>
       </div>
+      <div id="loginValid">
+        login Access granted!!.
+      </div>
+      <div id="loginInvalid">
+        Incorrect password or id login acces Denied!
+        
+      </div>
       
       
       
       <div class="col-12">
-        <button class="btn btn-primary" type="submit" >log-in</button>
+        <button class="btn btn-primary" type="submit" onclick="logIn()" >log-in</button>
       </div>
     </form>
   </div>
