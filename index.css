@@ -20,6 +20,7 @@ input{
 }
 .home-container{
     display: block;
+    background-color: azure;
 }
 button{
     margin-right: 1rem;
@@ -36,4 +37,10 @@ button{
     display: none;
     color: red;
 
+}
+a{
+    margin-left: 20px;
+}
+.passtype{
+    display: "none" !important;
 }

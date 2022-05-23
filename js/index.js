@@ -35,9 +35,11 @@ function status(activebar){
       // console.log("Hello world");
 			break
 		case 'SIGNUP':
+     
 			signupnavlink.classList.add("active");
 			signupPage.style.display = 'block';
-     // console.log("Hello world");
+      //signupPage.getElementsByClassName("passtype").style.display = "none"
+      console.log("Hello world");
 			break
 		case 'LOGIN':
 			loginnavlink.classList.add("active");
@@ -99,6 +101,11 @@ const decode = (encodeStr) => {
 let validAlert = document.getElementById("valid-alert");
 
 const signUp = () => {
+    
+    let isValid =  isValidate()
+    if(isValid === false){
+         return;
+    }
     let inputPassword = signupPassword.value; 
     console.log(inputPassword);
     state.password = encode(inputPassword);
@@ -131,19 +138,20 @@ const logIn = () => {
 
 const confirmPass = () => {
   let confirmPassword = document.getElementById("confirm-password");
-  let selectspan = document.getElementById("confirm-pass");
+  let selectitag = document.getElementById("confirm-pass");
   let confirmPass = confirmPassword.value;
   let inputPass = signupPassword.value;
   if(inputPass === confirmPass){
-    selectspan.style.backgroundColor ="green";
-    selectspan.style.display = "block";
+    selectitag.style.backgroundColor ="green";
+    selectitag.style.display = "block";
     
 
   }
   else{
-    selectspan.style.backgroundColor = "red";
-    selectspan.style.display = "block";
+    selectitag.style.backgroundColor = "red";
+    selectitag.style.display = "block";
     
   }
 
 }
+

@@ -11,12 +11,12 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="index.css">
-    <script src="https://kit.fontawesome.com/430f64643a.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="index.css">
+  <script src="https://kit.fontawesome.com/430f64643a.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-   <!-- nav bar it contains nav items -->
+  <!-- nav bar it contains nav items -->
   <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
@@ -34,15 +34,15 @@
 
           </ul>
           <form class="d-flex">
-            <button class="btn btn-outline-success " id = "signupnavlink" onclick="status('SIGNUP')">signup</button>
-            <button class="btn btn-outline-success" id =  "loginnavlink" onclick="status('LOGIN')">login</button>
+            <a class="btn btn-outline-success " id="signupnavlink" onclick="status('SIGNUP')">signup</a>
+            <a class="btn btn-outline-success" id="loginnavlink" onclick="status('LOGIN')">login</a>
           </form>
         </div>
       </div>
     </nav>
     <div class="alert alert-success" id="valid-alert" role="alert">
     </div>
-  
+
     <div class="alert alert-danger" id="invalid-alert" role="alert">
     </div>
 
@@ -50,62 +50,70 @@
     <div class="container home-container" id="home-page">
       <div class="jumbotron">
         <h1 class="display-4">Hello, Wecome to User Management</h1>
-        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to
-          featured content or information.</p>
+        <p class="lead">This is a simple hero unit, To before log-in in our System on should must sign-up </p>
+        <h4>Rules for while signing up are follows:-</h4>
         <hr class="my-4">
+        <ul>
+          <li>Your password must contain at least 8 charechters for strong <b>Password</b></li>
+          <li>To Confirm Password, password containing confirm-password field must match with previous password</li>
+
+        </ul>
         <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        <a class="btn btn-dark btn-lg" href="#" role="button">Learn more</a>
       </div>
 
     </div>
 
   </div>
-    <!-- sign up container -->
+  <!-- sign up container -->
 
-  <div class="container sign-up-container " id = "sign-up-page">
+  <div class="container sign-up-container " id="sign-up-page">
     <div class="heading">
       <h2>Sign-Up!</h2>
       <p>please fill this form to create an Account.</p>
     </div>
     <form class="row g-3 needs-validation" novalidate>
       <div class="col-md-6">
-        <label for="validationCustom01" class="form-label">First name</label>
-        <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
-        <div class="valid-feedback">
+        <label for="firstname" class="form-label">First name</label>
+        <input type="text" class="form-control" id="firstname" placeholder="john" required>
+        <div class="valid-feedback" id="firstNameValid">
           Looks good!
         </div>
-        <div class="invalid-feedback">
+        <div class="invalid-feedback" id="firstNameInvalid">
           Please enter a Name
         </div>
       </div>
       <div class="col-md-6">
-        <label for="validationCustom02" class="form-label">Last name</label>
-        <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
-        <div class="valid-feedback">
+        <label for="lastname" class="form-label">Last name</label>
+        <input type="text" class="form-control" id="lastname" placeholder="snow" required>
+        <div class="valid-feedback" id="lastNameValid">
           Looks good!
         </div>
-        <div class="invalid-feedback">
+        <div class="invalid-feedback" id="lastNameInvalid">
           Please enter a valid lastname.
         </div>
       </div>
       <div class="col-md-12">
-        <label for="validationCustomUsername" class="form-label"> <i class="fa-solid fa-envelope"></i> Email</label>
+        <label for="email" class="form-label"> <i class="fa-solid fa-envelope"></i> Email</label>
         <div class="input-group has-validation">
           <span class="input-group-text" id="inputGroupPrepend">@</span>
-          <input type="email" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend"
-            required placeholder="abc@gmail.com">
-          <div class="invalid-feedback">
+          <input type="email" class="form-control" id="email" aria-describedby="inputGroupPrepend" required
+            placeholder="abc@gmail.com">
+          <div class="valid-feedback" id="emailValid">
+            Looks good!
+          </div>
+          <div class="invalid-feedback" id="emailInvalid">
             Please enter a valid Email.
           </div>
         </div>
       </div>
       <div class="col-md-12">
-        <label for="validationCustom03" class="form-label"><i class="fa-solid fa-phone"></i> Phone</label>
-        <input type="number" class="form-control" id="validationCustom03" required>
-        <div class="valid-feedback">
+        <label for="phoneno" class="form-label"><i class="fa-solid fa-phone"></i> Phone</label>
+        <input type="number" class="form-control" id="phoneno" required>
+        <div class="valid-feedback" id="phoneValid">
           Looks good!
         </div>
-        <div class="invalid-feedback">
+        <div class="invalid-feedback" id="phoneInvalid">
           Please provide valid number.
         </div>
       </div>
@@ -113,22 +121,27 @@
       <div class="col-md-6">
         <label for="validationCustom05" class="form-label"><i class="fa-solid fa-key"></i> Password</label>
         <input type="password" class="form-control" id="sign-up-password" required placeholder="Password">
-        <div class="valid-feedback">
-          Looks good!
+        <!-- <div class="passtype" id="weak-pass">
+          Weak-pass!
         </div>
-        <div class="invalid-feedback">
-          Please provide a valid zi.
+        <div class="passtype" id="meadium-pass">
+          Meadium-pass!
         </div>
+        <div class="passtype" id="strong-pass">
+          Strong-pass!
+        </div> -->
+        <div class="invalid-feedback" id="signup-pass-invalid">
+          Please provide a valid password.
+        </div>
+
+
       </div>
       <div class="col-md-6">
         <label for="validationCustom05" class="form-label"> <i class="fa-solid fa-key"></i> Confirm Password</label>
-        <input  type="password" class="form-control" id="confirm-password" required placeholder="Confirm password"  onkeyup="confirmPass()"><span id = "confirm-pass" style="width: 15px; height: 15px; background-color:green; border-radius: 50%;"></span>
-        <div class="valid-feedback">
-          Looks good!
-        </div>
-        <div class="invalid-feedback">
-          Please provide a valid zi.
-        </div>
+        <input type="password" class="form-control" id="confirm-password" required placeholder="Confirm password"
+          onkeyup="confirmPass()">
+        <span id="confirm-pass" style="width: 15px; height: 15px; background-color:green; border-radius: 50%;"></span>
+
       </div>
       <div class="col-12">
         <div class="form-check">
@@ -136,13 +149,13 @@
           <label class="form-check-label" for="invalidCheck">
             Agree to terms and conditions
           </label>
-          <div class="invalid-feedback">
+          <div class="invalid-feedback" id="tncCondition">
             You must agree before submitting.
           </div>
         </div>
       </div>
       <div class="col-12">
-        <button class="btn btn-primary" type="submit" onclick="signUp()">Sign-Up</button>
+        <button class="btn btn-dark" type="submit" onclick="signUp()">Sign-Up</button>
       </div>
     </form>
 
@@ -153,12 +166,13 @@
       <p>please long-in using Email.</p>
     </div>
     <form class="row g-3 needs-validation" novalidate>
-      
+
       <div class="col-md-12">
         <label for="validationCustomUsername" class="form-label"> <i class="fa-solid fa-envelope"></i> Email</label>
         <div class="input-group has-validation">
-          
-          <input type="email" class="form-control" id="log-in-id" aria-describedby="inputGroupPrepend" required placeholder= "xyz@gmail.com"> 
+
+          <input type="email" class="form-control" id="log-in-id" aria-describedby="inputGroupPrepend" required
+            placeholder="xyz@gmail.com">
           <div class="invalid-feedback">
             Please choose a username.
           </div>
@@ -176,17 +190,19 @@
       </div>
       <div id="loginInvalid">
         Incorrect password or id login acces Denied!
-        
+
       </div>
-      
-      
-      
+
+
+
       <div class="col-12">
-        <button class="btn btn-primary" type="submit" onclick="logIn()" >log-in</button>
+        <button class="btn btn-dark" type="submit" onclick="logIn()">log-in</button>
       </div>
     </form>
   </div>
-  <script src="index.js"></script>
+  <script src="js/index.js"></script>
+  <script src="js/validate.js"></script>
+  <script src="js/checkpass.js"></script>
 
 </body>
 
