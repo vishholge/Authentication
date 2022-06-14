@@ -32,13 +32,12 @@ function status(activebar){
 		case 'HOME':
 			homenavlink.classList.add("active");
 			homePage.style.display = 'block';
-      // console.log("Hello world");
+      
 			break
 		case 'SIGNUP':
      
 			signupnavlink.classList.add("active");
 			signupPage.style.display = 'block';
-      //signupPage.getElementsByClassName("passtype").style.display = "none"
       console.log("Hello world");
 			break
 		case 'LOGIN':
@@ -77,21 +76,18 @@ const lookup = {
   '@': '-', '~': '_'
 }
 
+// encoding signup password;
 const encode = (inputStr) => {
    let codeArr = inputStr.split("");
    const lookupKeys = Object.keys(lookup);
-   //console.log(lookupKeys);
    const lookUpValues = Object.values(lookup);
-   //console.log(lookUpValues);
    let encodeArr = codeArr.map(codeChar =>{
        let index = lookUpValues.indexOf(codeChar);
-      // console.log(index);
        return lookupKeys[index];
    })
-   //console.log(encodeArr);
-   //console.log(encodeArr.join(""));
     return encodeArr.join("");
 }
+// decoding login password.
 const decode = (encodeStr) => {
     const codeArr = encodeStr.split("");
     let decodeArr = codeArr.map(codeChar => lookup[codeChar]);
@@ -107,9 +103,8 @@ const signUp = () => {
          return;
     }
     let inputPassword = signupPassword.value; 
-    console.log(inputPassword);
+    // console.log(inputPassword);
     state.password = encode(inputPassword);
-    console.log(state.password);
     validAlert.innerText = 'Password successfully changed!'
 	validAlert.style.display = 'block'
 	setTimeout(() => {
